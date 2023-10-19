@@ -4,14 +4,16 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Type number line:");
-        String value = setNumberLine(scanner);
-        System.out.println("Type n:");
-        int n = setN(scanner);
+        try(Scanner scanner = new Scanner(System.in)){
 
-        int result = getLargestProduct(value, n);
-        System.out.println(result);
+            System.out.println("Type number line:");
+            String value = setNumberLine(scanner);
+            System.out.println("Type n:");
+            int n = setN(scanner);
+
+            int result = getLargestProduct(value, n);
+            System.out.println(result);
+        }
     }
 
     public static int getLargestProduct(String value, int n) {
