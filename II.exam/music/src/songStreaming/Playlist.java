@@ -1,4 +1,4 @@
-package songs;
+package songStreaming;
 
 public interface Playlist {
     void addSong(Song song);

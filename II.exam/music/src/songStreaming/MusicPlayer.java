@@ -1,4 +1,4 @@
-package songs;
+package songStreaming;
 
 public interface MusicPlayer {
     void play() throws InterruptedException;
