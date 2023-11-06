@@ -24,15 +24,16 @@ public class StreamingService implements MusicPlayer, Playlist {
             System.out.println("It starts " + s.getTitle());
             actualSongId++;
             Thread.sleep(s.getLength());
-            System.out.println("The " + actualSongId + " song is finished.");
+            System.out.println("The " + actualSongId + ". song is finished.");
         }
         actualSongId = 0;
         if (isRepeatedAllowed) {
             isRepeatedAllowed = false;
             play();
+        }else {
+            System.out.println("Good Bye!");
+            stop();
         }
-        System.out.println("Good Bye!");
-        stop();
     }
 
     @Override
@@ -42,7 +43,11 @@ public class StreamingService implements MusicPlayer, Playlist {
 
     @Override
     public void addSong(Song song) {
-        songSet.add(song);
+        if(songSet.size()<10){
+            songSet.add(song);
+        }else {
+            System.out.println("There are already 10 songs in the list.");
+        }
     }
 
     @Override
