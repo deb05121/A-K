@@ -1,7 +1,9 @@
 package botanical;
 
-public class OakTree extends Tree{
+public class OakTree extends Tree {
+    public OakTree() {
 
+    }
     public OakTree(String name, int age, int height) {
         this.name = name;
         this.age = age;
