@@ -6,7 +6,7 @@ public class Car extends Vehicle {
 
     @Override
     void displayInfo() {
-
+        System.out.println(this);;
     }
 
     public Car() {
@@ -31,5 +31,14 @@ public class Car extends Vehicle {
     @Override
     public String getPlateNumber() {
         return super.getPlateNumber();
+    }
+
+    @Override
+    public String toString() {
+        return "Car{" +
+                "brand=" + brand +
+                ", model='" + model + '\'' +
+                ", plateNumber='" + plateNumber + '\'' +
+                ", rental cost for 1 day: " + super.calculateRentalCost(1) + " } ";
     }
 }
