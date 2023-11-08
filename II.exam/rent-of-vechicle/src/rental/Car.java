@@ -39,6 +39,6 @@ public class Car extends Vehicle {
                 "brand=" + brand +
                 ", model='" + model + '\'' +
                 ", plateNumber='" + plateNumber + '\'' +
-                ", rental cost for 1 day: " + super.calculateRentalCost(1) + " } ";
+                ", rental cost for 1 day: " + this.calculateRentalCost(1) + " } ";
     }
 }

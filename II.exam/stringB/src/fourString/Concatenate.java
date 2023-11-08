@@ -20,23 +20,30 @@ public class Concatenate {
     }
 
     private static String getNewString(List<String> stringList) {
+        boolean bingo = false;
         StringBuilder newString = new StringBuilder();
-        int max;
-        while (!stringList.isEmpty()) {
-            max = 0;
+        while (stringList.size() > 1) {
             String maxWord = "";
+            int maxLength = 0;
             for (String s : stringList) {
-                if (max < s.length()) {
-                    max = s.length();
-                    if (max > 14) {
-                        System.out.println("BINGO");
-                    }
+                maxLength = Math.max(maxLength, s.length());
+                if (maxLength > 14) {
+                    bingo = true;
+                }
+            }
+            for (String s : stringList) {
+                if (maxLength == s.length()) {
                     maxWord = s;
+                    break;
                 }
             }
             newString.append(maxWord);
             stringList.remove(maxWord);
         }
+        if (bingo) {
+            System.out.println("BINGO");
+        }
+        newString.append(stringList.get(0));
         return newString.toString();
     }
 }

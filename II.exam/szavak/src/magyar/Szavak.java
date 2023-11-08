@@ -1,18 +1,15 @@
 package magyar;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Szavak {
 
     public static void main(String[] args) {
         String str = "Ez egy néhány szavas rövid mondat Janitól tömören.";
-        boolean valid = validator(str);
+        boolean valid = isValidHungarianText(str);
         System.out.println("");
 
     }
 
-    private static boolean validator(String str) {
+    private static boolean isValidHungarianText(String str) {
         boolean valid = true;
         String[] words = str.split(" ");
         int hunWordsPieces = 0;

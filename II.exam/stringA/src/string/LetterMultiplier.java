@@ -9,13 +9,13 @@ public class LetterMultiplier {
         System.out.printf("The new string: %s\n", newStr);
     }
 
-    private static boolean validator(String str) {
+    private static boolean isValidText(String str) {
         return str.matches(("[a-zA-Z]+"));
     }
 
     private static String getNewString(String str, int num) {
         StringBuilder newStr = new StringBuilder();
-        boolean validStr = validator(str);
+        boolean validStr = isValidText(str);
         if(validStr){
             int len = str.length();
             for (int i = 0; i < len; i++) {
