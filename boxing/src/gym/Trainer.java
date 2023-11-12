@@ -1,8 +1,8 @@
 package gym;
 
 public class Trainer {
-    private String name;
-    private int age;
+    private final String name;
+    private final int age;
     private final int experience;
 
     public Trainer(String name, int age, int experience) {
