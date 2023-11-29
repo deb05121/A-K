@@ -10,19 +10,19 @@ public class Trainer {
         this.age = age;
         this.experience = experience;
     }
-    public void training(Boxer boxer){
-        boxer.setPower(experience);
+    public void train(Boxer boxer){
+        boxer.addHitPoints(experience);
     }
     public void heal(Boxer boxer){
-        boxer.setHitPoints(20);
+        boxer.addPower(20);
     }
 
     @Override
     public String toString() {
         return "Trainer{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
-                ", experience=" + experience +
+                "\nname='" + name + '\'' +
+                ", \nage=" + age +
+                ", \nexperience=" + experience +
                 '}';
     }
 }

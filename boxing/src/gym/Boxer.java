@@ -7,7 +7,7 @@ public class Boxer{
     private int age;
     private int hitPoints;
     private int power;
-    private Integer wins;
+    private int wins;
 
     public Boxer() {
 
@@ -25,7 +25,7 @@ public class Boxer{
         return wins;
     }
 
-    public void setWins() {
+    public void increaseWins() {
         this.wins++;
     }
 
@@ -37,22 +37,26 @@ public class Boxer{
         return hitPoints;
     }
 
-    public void setPower(int power) {
+    public void addHitPoints(int hitPoints) {
+        this.hitPoints += hitPoints;
+    }
+
+    public void addPower(int power) {
         this.power += power;
     }
 
-    public void setHitPoints(int power) {
+    public void attack(int power) {
         this.hitPoints -= power;
     }
 
     @Override
     public String toString() {
         return "\nBoxer\n" +
-                "+-------------------\n" +
+                "+------------\n" +
                 "|name=  " + name + "\n" +
                 "|age=   " + age + "\n" +
                 "|wins=  " + wins + "\n" +
-                "+-------------------";
+                "+------------";
     }
 
     @Override

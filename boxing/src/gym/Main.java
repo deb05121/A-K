@@ -5,8 +5,9 @@ import java.util.Objects;
 public class Main {
     public static void main(String[] args) {
         Trainer trainer = new Trainer("Coach", 55, 7);
+        System.out.println(trainer);
         Gym newGym = new Gym(trainer);
-        Boxer boxerA = new Boxer("A", 20, 110, 45);
+        Boxer boxerA = new Boxer("A", 20, 110, 125);
         newGym.setBoxers(boxerA);
         Boxer boxerB = new Boxer("B", 21, 100, 10);
         newGym.setBoxers(boxerB);
@@ -18,7 +19,7 @@ public class Main {
         newGym.setBoxers(boxerE);
         for (Boxer b : newGym.boxers) {
             for (int i = 0; i < 3; i++) {
-                trainer.training(b);
+                trainer.train(b);
             }
         }
         for (int i = 0; i < 5; i++) {
@@ -31,15 +32,15 @@ public class Main {
                 boolean isNotWinner = true;
                 while (isNotWinner) {
                     if (!bxrX.equals(bxrY)) {
-                        bxrY.setHitPoints(bxrX.getAttackPower());
+                        bxrY.attack(bxrX.getAttackPower());
                         if (bxrY.getHitPoints() < 1) {
-                            bxrX.setWins();
+                            bxrX.increaseWins();
                             break;
                         }
-                        bxrX.setHitPoints(bxrY.getAttackPower());
+                        bxrX.attack(bxrY.getAttackPower());
                         if (bxrX.getHitPoints() < 1) {
                             isNotWinner = false;
-                            bxrY.setWins();
+                            bxrY.increaseWins();
                         }
                     }
                 }

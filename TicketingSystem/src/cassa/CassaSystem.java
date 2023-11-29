@@ -7,8 +7,23 @@ public class CassaSystem {
     //private List<Ticket> ticketList;
     private List<Customer> customerList;
 
+    private List<Ticket> ticketList;
+
     public CassaSystem() {
         customerList = new ArrayList<>();
+        ticketList = new ArrayList<>();
+    }
+
+    public List<Ticket> getTicketList() {
+        return ticketList;
+    }
+
+    public List<Customer> getCustomerList() {
+        return customerList;
+    }
+
+    public void addToTicketToList(Ticket ticket){
+        ticketList.add(ticket);
     }
 
     public void addCustomerToList(Customer customer) {
@@ -19,37 +34,18 @@ public class CassaSystem {
         customerList.remove(customer);
     }
 
-    public int checkSeatAvailable() {
+    public int checkTicketAvailable(TicketType type) {
         int index = -1;
-        List<Ticket> seatTicketList = Ticket.getSeatTicketList();
-        for (int i = 0; i < seatTicketList.size(); i++) {
-            if (seatTicketList.get(i).getStatus() == Status.AVAILABLE) {
-                return i;
+        for (int i = 0; i < ticketList.size(); i++) {
+            if(ticketList.get(i).getType()==type){
+                if (ticketList.get(i).getStatus() == Status.AVAILABLE) {
+                    return i;
+                }
             }
         }
         return index;
     }
 
-    public int checkVipAvailable() {
-        int index = -1;
-        List<Ticket> vipTicketList = Ticket.getVipTicketList();
-        for (int i = 0; i < vipTicketList.size(); i++) {
-            if (vipTicketList.get(i).getStatus() == Status.AVAILABLE) {
-                return i;
-            }
-        }
-        return index;
-    }
 
-    public int checkStandAvailable() {
-        int index = -1;
-        List<Ticket> standTicketList = Ticket.getStandTicketList();
-        for (int i = 0; i < standTicketList.size(); i++) {
-            if (standTicketList.get(i).getStatus() == Status.AVAILABLE) {
-                return i;
-            }
-        }
-        return index;
-    }
 
 }
