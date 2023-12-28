@@ -16,13 +16,13 @@ public class Main {
         System.out.println("Type the next string:");
         Map<String, Integer> result = ThreeEasyMethods.getWordFrequencies(scanner.nextLine());
         System.out.println(result);
-        //2/a.
 
+        //2/a.
         System.out.println("Type some strings. How many words do you want?");
         int wordNr = scanner.nextInt();
         scanner.nextLine();
         List<String> stringList = new ArrayList<>();
-        while (wordNr >0) {
+        while (wordNr > 0) {
             stringList.add(scanner.nextLine());
             wordNr--;
         }
@@ -33,7 +33,6 @@ public class Main {
         System.out.println("Type a number:");
         boolean isPrime = ThreeEasyMethods.isPrime(scanner.nextInt());
         System.out.printf("Is your number prime? %s", isPrime);
-
 
     }
 }

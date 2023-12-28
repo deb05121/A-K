@@ -13,13 +13,13 @@ public class ThreeEasyMethods {
         return characterSet.size() == len;
     }
 
-    public static Map<String, Integer> getStringFrequencies(List<String> stringList){
+    public static Map<String, Integer> getStringFrequencies(List<String> stringList) {
         Map<String, Integer> strFrequencies = new HashMap<>();
-        for (String str: stringList) {
+        for (String str : stringList) {
             String word = str.toLowerCase();
-            if(strFrequencies.containsKey(word)){
-                strFrequencies.put(word, strFrequencies.get(word)+1);
-            }else {
+            if (strFrequencies.containsKey(word)) {
+                strFrequencies.put(word, strFrequencies.get(word) + 1);
+            } else {
                 strFrequencies.put(word, 1);
             }
         }
@@ -42,15 +42,14 @@ public class ThreeEasyMethods {
 
     public static boolean isPrime(int userNumber) {
         int border = (int) Math.sqrt(userNumber) + 1;
-        if(userNumber < 2){
+        if (userNumber < 2) {
             return false;
         }
         for (int i = 2; i < border; i++) {
-            if(userNumber%i==0){
+            if (userNumber % i == 0) {
                 return false;
             }
         }
         return true;
     }
-
 }
